@@ -9,6 +9,7 @@ class Room {
 
     public function __construct(string $roomName) {
         $this->roomName = $roomName;
+        $this->meetings = [];
     }
 
     public function getRoomName() {
@@ -28,7 +29,7 @@ class Room {
         $meeting = new Meeting($start, $end, $this);
         $this->meetings[] = $meeting;
 
-        return false;
+        return true;
     }
 
 }

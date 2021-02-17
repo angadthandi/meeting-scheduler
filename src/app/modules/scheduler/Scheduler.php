@@ -10,15 +10,15 @@ class Scheduler {
         $this->rooms = $rooms;
     }
 
-    public function book(int $start, int $end): bool {
+    public function book(int $start, int $end): string {
         foreach ($this->rooms as $room) {
             $booked = $room->book($start, $end);
             if ($booked) {
-                return true;
+                return $room->getRoomName();
             }
         }
 
-        return false;
+        return "no rooms available!";
     }
 
 }
